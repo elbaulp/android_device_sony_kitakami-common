@@ -33,7 +33,8 @@ TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
-TARGET_CPU_VARIANT := generic
+TARGET_CPU_VARIANT := cortex-a53
+
 
 TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv7-a-neon
@@ -149,15 +150,15 @@ TARGET_RIL_VARIANT := caf
 
 # Shims
 TARGET_LD_SHIM_LIBS := \
-     /system/lib/hw/camera.qcom.so|/system/vendor/lib/camera.qcom_shim.so \
-     /system/lib64/libsys-utils.so|libsensor.so \
-     /system/lib/libcammw.so|libsensor.so
+	 /system/lib/hw/camera.qcom.so|/system/vendor/lib/camera.qcom_shim.so \
+	 /system/lib64/libsys-utils.so|libsensor.so \
+	 /system/lib/libcammw.so|libsensor.so
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 
 BOARD_SEPOLICY_DIRS += \
-    $(COMMON_PATH)/sepolicy
+	$(COMMON_PATH)/sepolicy
 
 # WiFi
 BOARD_WLAN_DEVICE           := bcmdhd
